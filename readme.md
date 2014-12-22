@@ -6,8 +6,9 @@
 $qb = new \Casinelli\Wikipedia\QueryBuilder;
 
 $qb->setFormat("php");
-$qb->titles = "Earth";
-$qb->exsentences = 4;
+$qb->setTitles("Singapore");
+$qb->setExtractsSentences(3);
+$qb->setExtractsPlainText(true);
 
 $response = unserialize( $qb->fetch() );
 
