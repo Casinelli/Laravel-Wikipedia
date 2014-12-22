@@ -1,0 +1,20 @@
+{
+    "name": "casinelli/wikipedia",
+    "description": "",
+    "authors": [
+        {
+            "name": "Casinelli",
+            "email": "giovanni.casinelli@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Casinelli\\Wikipedia": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
