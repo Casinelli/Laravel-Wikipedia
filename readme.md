@@ -1,8 +1,22 @@
 # Wikipedia
 
+### Installation
+
+Begin by installing this package through Composer.
+
+```js
+{
+    "require": {
+        "casinelli/wikipedia": "dev-master"
+    }
+}
+```
+
+### Usage
+
 **Retrieve page extract**
 
-```
+```php
 $wikipedia = new \Casinelli\Wikipedia\Wikipedia;
 
 return $wikipedia->search("Rome")->getSentences(5);
@@ -10,7 +24,7 @@ return $wikipedia->search("Rome")->getSentences(5);
 
 **Same with QueryBuilder**
 
-```
+```php
 $qb = new \Casinelli\Wikipedia\QueryBuilder;
 
 $qb->setFormat("php");
