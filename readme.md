@@ -1,6 +1,14 @@
 # Wikipedia
 
-**Example: Retrieve page extract**
+**Retrieve page extract**
+
+```
+$wikipedia = new \Casinelli\Wikipedia\Wikipedia;
+
+return $wikipedia->search("Rome")->getSentences(5);
+```
+
+**Same with QueryBuilder**
 
 ```
 $qb = new \Casinelli\Wikipedia\QueryBuilder;
