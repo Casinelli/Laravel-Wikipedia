@@ -1,6 +1,6 @@
 {
     "name": "casinelli/wikipedia",
-    "description": "",
+    "description": "Laravel package to query Wikipedia",
     "authors": [
         {
             "name": "Casinelli",
