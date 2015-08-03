@@ -13,7 +13,7 @@ class WikipediaServiceProvider extends ServiceProvider {
 
 	public function boot()
 	{
-		$this->package('casinelli/wikipedia');
+		//
 	}
 
 	/**
@@ -33,7 +33,7 @@ class WikipediaServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return [];
 	}
 
 }
