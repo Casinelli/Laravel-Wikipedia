@@ -1,5 +1,9 @@
 # Wikipedia
 
+### About 
+
+This project is a fork to extend the functionality of the original Laravel-Wikipedia By Giovanni Casinelli (see credits below)
+
 ### Installation
 
 Begin by installing this package through Composer.
@@ -38,3 +42,9 @@ $page = reset( $response["query"]["pages"] );
 
 return $page["extract"];
 ```
+
+### Credits
+
+Original Project Author: 
+Giovanni Casinelli
+https://github.com/Casinelli/Laravel-Wikipedia
