@@ -1,10 +1,10 @@
 {
-    "name": "casinelli/wikipedia",
-    "description": "Laravel package to query Wikipedia",
+    "name": "kealjones/laravel-wikipedia",
+    "description": "Laravel package to query Wikipedia API",
     "authors": [
         {
-            "name": "Casinelli",
-            "email": "giovanni.casinelli@gmail.com"
+            "name": "Keal Jones & Giovanni Casinelli",
+            "email": "kealjones@gmail.com"
         }
     ],
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Casinelli\\Wikipedia": "src/"
+            "KealJones\\LaravelWikipedia": "src/"
         }
     },
     "minimum-stability": "stable"
