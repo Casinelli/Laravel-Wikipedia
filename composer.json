@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "KealJones\\Laravel-Wikipedia": "src/"
+            "KealJones\\LaravelWikipedia": "src/"
         }
     },
     "minimum-stability": "stable"
