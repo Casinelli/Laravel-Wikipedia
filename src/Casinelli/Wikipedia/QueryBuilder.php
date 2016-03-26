@@ -24,7 +24,6 @@ class QueryBuilder {
 		'exlimit'     => 1,			// Max 20
 		'titles'      => null,		// The page title to search
 		'explaintext' => null,	// Return format as plain text instead of HTML
-		
 		'format'      => 'json',		// json|xml|php|wddx|yaml|jsonfm|txt|dbg|dump
 	];
 
@@ -34,6 +33,18 @@ class QueryBuilder {
 	 * @var array
 	 */
 	protected $allowedFormats = ['json', 'xml', 'php', 'wddx', 'yaml', 'jsonfm', 'txt', 'dbg', 'dump'];
+
+    /**
+     * QueryBuilder constructor.
+     *
+     * @param array $query Override all query parameters at once
+     */
+	public function __construct(array $query = [])
+    {
+        if (count($query)) {
+            $this->query = $query;
+        }
+    }
 
 	public function fetch()
 	{
