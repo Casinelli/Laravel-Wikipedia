@@ -88,7 +88,7 @@ class QueryBuilder {
 
 		$this->query["format"] = $format;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -110,7 +110,7 @@ class QueryBuilder {
 
 		$this->query["exlimits"] = $value;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -133,7 +133,7 @@ class QueryBuilder {
 		$this->query["exchars"] = $chars;
 		$this->query["exsentences"] = null;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -156,7 +156,7 @@ class QueryBuilder {
 		$this->query["exsentences"] = $sentences;
 		$this->query["exchars"] = null;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -176,7 +176,7 @@ class QueryBuilder {
 	{
 		$this->query["titles"] = $titles;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -190,7 +190,7 @@ class QueryBuilder {
 	}
 
 	/**
-	 * Sett the explaintext query value
+	 * Set the explaintext query value
 	 * @param bool $value True for Plain text, false for HTML
 	 */
 	public function setExtractsPlainText($value)
@@ -206,6 +206,6 @@ class QueryBuilder {
 	{
 		$this->query = $query;
 
-		return true;
+		return $this;
 	}
 }
