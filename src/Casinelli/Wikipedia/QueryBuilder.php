@@ -198,4 +198,14 @@ class QueryBuilder {
 		return $this->query["explaintext"] = $value;
 	}
 
+    /**
+	 * Override the entire query array in one go
+	 * @param array $setQuery an array of query parameters
+	 */
+	public function setQuery(array $query = [])
+	{
+		$this->query = $query;
+
+		return true;
+	}
 }
