@@ -24,7 +24,6 @@ class QueryBuilder {
 		'exlimit'     => 1,			// Max 20
 		'titles'      => null,		// The page title to search
 		'explaintext' => null,	// Return format as plain text instead of HTML
-		
 		'format'      => 'json',		// json|xml|php|wddx|yaml|jsonfm|txt|dbg|dump
 	];
 
@@ -34,6 +33,18 @@ class QueryBuilder {
 	 * @var array
 	 */
 	protected $allowedFormats = ['json', 'xml', 'php', 'wddx', 'yaml', 'jsonfm', 'txt', 'dbg', 'dump'];
+
+    /**
+     * QueryBuilder constructor.
+     *
+     * @param array $query Override all query parameters at once
+     */
+	public function __construct(array $query = [])
+    {
+        if (count($query)) {
+            $this->query = $query;
+        }
+    }
 
 	public function fetch()
 	{
@@ -77,7 +88,7 @@ class QueryBuilder {
 
 		$this->query["format"] = $format;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -99,7 +110,7 @@ class QueryBuilder {
 
 		$this->query["exlimits"] = $value;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -122,7 +133,7 @@ class QueryBuilder {
 		$this->query["exchars"] = $chars;
 		$this->query["exsentences"] = null;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -145,7 +156,7 @@ class QueryBuilder {
 		$this->query["exsentences"] = $sentences;
 		$this->query["exchars"] = null;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -165,7 +176,7 @@ class QueryBuilder {
 	{
 		$this->query["titles"] = $titles;
 
-		return true;
+		return $this;
 	}
 
 	/**
@@ -179,7 +190,7 @@ class QueryBuilder {
 	}
 
 	/**
-	 * Sett the explaintext query value
+	 * Set the explaintext query value
 	 * @param bool $value True for Plain text, false for HTML
 	 */
 	public function setExtractsPlainText($value)
@@ -187,4 +198,14 @@ class QueryBuilder {
 		return $this->query["explaintext"] = $value;
 	}
 
+    /**
+	 * Override the entire query array in one go
+	 * @param array $setQuery an array of query parameters
+	 */
+	public function setQuery(array $query = [])
+	{
+		$this->query = $query;
+
+		return $this;
+	}
 }
