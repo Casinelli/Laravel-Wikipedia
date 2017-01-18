@@ -34,6 +34,16 @@ class QueryBuilder {
 	 */
 	protected $allowedFormats = ['json', 'xml', 'php', 'wddx', 'yaml', 'jsonfm', 'txt', 'dbg', 'dump'];
 
+	/**
+	 * Change the API url
+	 * @param string $url
+	 */
+	public function setApi($url)
+	{
+		$this->url = $url;
+		return $this;
+	}
+	
     /**
      * QueryBuilder constructor.
      *
