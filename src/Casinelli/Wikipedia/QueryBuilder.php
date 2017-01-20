@@ -22,6 +22,7 @@ class QueryBuilder {
 		'exchars'     => null,		// No less than 1
 		'exsentences' => null,	// Between 1 and 10
 		'exlimit'     => 1,			// Max 20
+		'redirects'   => 1,			// Follow redirects eg between synonyms
 		'titles'      => null,		// The page title to search
 		'explaintext' => null,	// Return format as plain text instead of HTML
 		'format'      => 'json',		// json|xml|php|wddx|yaml|jsonfm|txt|dbg|dump
@@ -34,6 +35,16 @@ class QueryBuilder {
 	 */
 	protected $allowedFormats = ['json', 'xml', 'php', 'wddx', 'yaml', 'jsonfm', 'txt', 'dbg', 'dump'];
 
+	/**
+	 * Change the API url
+	 * @param string $url
+	 */
+	public function setApi($url)
+	{
+		$this->url = $url;
+		return $this;
+	}
+	
     /**
      * QueryBuilder constructor.
      *
