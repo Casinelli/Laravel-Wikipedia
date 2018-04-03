@@ -2,7 +2,7 @@
 
 class QueryBuilder {
 
-	protected $url = "http://en.wikipedia.org/w/api.php";
+	protected $url = "http://{lang}.wikipedia.org/w/api.php";
 
 	/**
 	 * Contains query parameters that cannot be modified
@@ -26,6 +26,7 @@ class QueryBuilder {
 		'titles'      => null,		// The page title to search
 		'explaintext' => null,	// Return format as plain text instead of HTML
 		'format'      => 'json',		// json|xml|php|wddx|yaml|jsonfm|txt|dbg|dump
+		'language'    => 'en'
 	];
 
 	/**
@@ -68,7 +69,8 @@ class QueryBuilder {
 	 */
 	public function getQueryUrl()
 	{
-		return $this->url . '?' . $this->getQueryString();
+		$url = str_replace('{lang}', $this->query['language'], $this->url);
+		return $url . '?' . $this->getQueryString();
 	}
 
 	/**
@@ -99,6 +101,12 @@ class QueryBuilder {
 
 		$this->query["format"] = $format;
 
+		return $this;
+	}
+	
+	public function setLanguage($lang)
+	{
+		$this->query['language'] = $lang;
 		return $this;
 	}
 
